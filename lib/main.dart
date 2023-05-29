@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shoesworld/forgotpw.dart';
+import 'package:shoesworld/nav.dart';
 import 'package:shoesworld/signup.dart';
 import 'package:shoesworld/onboard1.dart';
 import 'package:shoesworld/onboard2.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           '/signin': (context) => const Signin(),
           '/signup': (context) => const Signup(),
            '/forgotpw': (context) => const Forgotpw(),
+            '/nav': (context) => const Nav(),
         });
   }
 }
