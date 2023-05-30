@@ -184,76 +184,81 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 210,
-                  width: 160,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade400,
-                          offset: const Offset(
-                            5.0,
-                            5.0,
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/menshoes');
+                  },
+                  child: Container(
+                    height: 210,
+                    width: 160,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.shade400,
+                            offset: const Offset(
+                              5.0,
+                              5.0,
+                            ),
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
                           ),
-                          blurRadius: 10.0,
-                          spreadRadius: 2.0,
-                        ),
-                      ]),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 105,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20)),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20)),
-                          child: Image.network(
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqDleEVb0RdqV9kEBj0OUsjLhKCm9sLA8zQA&usqp=CAU',
-                            fit: BoxFit.cover,
+                        ]),
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 105,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20)),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20)),
+                            child: Image.network(
+                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqDleEVb0RdqV9kEBj0OUsjLhKCm9sLA8zQA&usqp=CAU',
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'Best Seller',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.blue,
+                        SizedBox(
+                          height: 10,
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'Nike Jordan',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        '\$453.00',
-                        style: TextStyle(
+                        Text(
+                          'Best Seller',
+                          style: TextStyle(
                             fontSize: 16,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                    ],
+                            color: Colors.blue,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Nike Jordan',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          '\$453.00',
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(
