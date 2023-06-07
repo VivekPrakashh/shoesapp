@@ -5,7 +5,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:shoesworld/cart.dart';
 import 'package:shoesworld/fav.dart';
 import 'package:shoesworld/home.dart';
-import 'package:shoesworld/notification.dart';
+import 'package:shoesworld/notifications.dart';
 import 'package:shoesworld/profile.dart';
 
 class Nav extends StatefulWidget {

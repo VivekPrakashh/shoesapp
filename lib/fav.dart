@@ -17,29 +17,34 @@ class Fav extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 40,
-                    width: 40,
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade400,
-                            offset: const Offset(
-                              5.0,
-                              5.0,
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/nav');
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade400,
+                              offset: const Offset(
+                                5.0,
+                                5.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
                             ),
-                            blurRadius: 10.0,
-                            spreadRadius: 2.0,
-                          ),
-                        ]),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Icon(
-                        Icons.chevron_left_sharp,
-                        size: 30,
+                          ]),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Icon(
+                          Icons.chevron_left_sharp,
+                          size: 30,
+                        ),
                       ),
                     ),
                   ),
