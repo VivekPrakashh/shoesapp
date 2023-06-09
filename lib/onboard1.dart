@@ -66,7 +66,7 @@ class Onboard1 extends StatelessWidget {
                           },
                           child: Container(
                             height: 40,
-                            width: 120,
+                            width: 140,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Colors.white,
@@ -76,9 +76,9 @@ class Onboard1 extends StatelessWidget {
                               child: Text(
                                 'Get Started',
                                 style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),

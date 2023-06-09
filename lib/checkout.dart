@@ -417,22 +417,28 @@ class Checkout extends StatelessWidget {
                                     SizedBox(
                                       height: 30,
                                     ),
-                                    Container(
-                                      height: 50,
-                                      width: 200,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        color: Colors.blue,
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pushNamed(context, '/nav');
+                                      },
+                                      child: Container(
+                                        height: 50,
+                                        width: 200,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Colors.blue,
+                                        ),
+                                        child: Align(
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              'Back To Shopping',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold),
+                                            )),
                                       ),
-                                      child: Align(
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            'Back To Shopping',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),
-                                          )),
                                     ),
                                   ],
                                 ),

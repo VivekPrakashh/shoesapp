@@ -1,11 +1,51 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class Notifications extends StatelessWidget {
+class Notifications extends StatefulWidget {
   const Notifications({super.key});
 
+  @override
+  State<Notifications> createState() => _NotificationsState();
+}
+
+class _NotificationsState extends State<Notifications> {
+  List data1 = [
+    {
+      "name": "Nike Club Max",
+      "subname": "Product With Offers",
+      "price": "\$365.93",
+      "times": "6 min ago",
+      "image":
+          'https://cdn.shopify.com/s/files/1/2117/7563/products/nike-air-jordan-royal-high-tops-7-fashionably-yours-1_grande.jpg?v=1677083125',
+    },
+    {
+      "name": "Nike Club Max",
+      "subname": "Product With Offers",
+      "price": "\$365.93",
+      "times": "6 min ago",
+      "image":
+          'https://cdn.shopify.com/s/files/1/0099/5232/9785/products/553560-066-7_800x.png?v=1681806800',
+    },
+  ];
+  List data2 = [
+    {
+      "name": "Nike Club Max",
+      "subname": "Product With Offers",
+      "price": "\$365.93",
+      "times": "6 min ago",
+      "image":
+          'https://cdn.shopify.com/s/files/1/2117/7563/products/nike-air-jordan-royal-high-tops-7-fashionably-yours-1_grande.jpg?v=1677083125',
+    },
+    {
+      "name": "Nike Club Max",
+      "subname": "Product With Offers",
+      "price": "\$365.93",
+      "times": "6 min ago",
+      "image":
+          'https://cdn.shopify.com/s/files/1/2117/7563/products/nike-air-jordan-royal-high-tops-7-fashionably-yours-1_grande.jpg?v=1677083125',
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,27 +121,26 @@ class Notifications extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Carts(
-                name: "Nike Club Max",
-                subname: "Product With Offers",
-                price: "\$365.93",
-                times: "6 min ago",
-                onTap: () {},
-                image:
-                    'https://cdn.shopify.com/s/files/1/2117/7563/products/nike-air-jordan-royal-high-tops-7-fashionably-yours-1_grande.jpg?v=1677083125',
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Carts(
-                name: "Nike Club Max",
-                subname: "Product With Offers",
-                price: "\$365.93",
-                times: "9 min ago",
-                onTap: () {},
-                image:
-                    'https://cdn.shopify.com/s/files/1/0099/5232/9785/products/553560-066-7_800x.png?v=1681806800',
-              ),
+              Column(
+                  children: List.generate(data1.length, (index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/menshoes', arguments: {
+                      "image": data1[index]["image"],
+                      "name": data1[index]["name"],
+                      "price": data1[index]["price"],
+                    });
+                  },
+                  child: Carts(
+                    image: data1[index]["image"],
+                    subname: data1[index]["subname"],
+                    name: data1[index]["name"],
+                    price: data1[index]["price"],
+                    times: data1[index]["times"],
+                    onTap: () {},
+                  ),
+                );
+              })),
               SizedBox(
                 height: 40,
               ),
@@ -118,27 +157,26 @@ class Notifications extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Carts(
-                name: "Nike Club Max",
-                subname: "Product With Offers",
-                price: "\$365.93",
-                times: "6 day ago",
-                onTap: () {},
-                image:
-                    'https://cdn.shopify.com/s/files/1/0255/4429/4477/products/Screenshot-2023-04-12-at-01-04-27.png?v=1681260886&width=533',
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Carts(
-                name: "Nike Club Max",
-                subname: "Product With Offers",
-                price: "\$365.93",
-                times: "16 day ago",
-                onTap: () {},
-                image:
-                    'https://cdn.shopify.com/s/files/1/2117/7563/products/nike-air-jordan-royal-high-tops-7-fashionably-yours-1_grande.jpg?v=1677083125',
-              ),
+              Column(
+                  children: List.generate(data2.length, (index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/menshoes', arguments: {
+                      "image": data2[index]["image"],
+                      "name": data2[index]["name"],
+                      "price": data2[index]["price"],
+                    });
+                  },
+                  child: Carts1(
+                    image: data2[index]["image"],
+                    subname: data2[index]["subname"],
+                    name: data2[index]["name"],
+                    price: data2[index]["price"],
+                    times: data2[index]["times"],
+                    onTap: () {},
+                  ),
+                );
+              })),
             ])));
   }
 }
@@ -161,79 +199,194 @@ class Carts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      Container(
-        height: 90,
-        width: 90,
-        decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(20), boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade400,
-            offset: const Offset(
-              5.0,
-              5.0,
+    return Column(
+      children: [
+        Row(children: [
+          Container(
+            height: 90,
+            width: 90,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade400,
+                    offset: const Offset(
+                      5.0,
+                      5.0,
+                    ),
+                    blurRadius: 10.0,
+                    spreadRadius: 2.0,
+                  ),
+                ]),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.network(
+                  '$image',
+                  fit: BoxFit.cover,
+                )),
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          SizedBox(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      '$name',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 60,
+                    ),
+                    Text(
+                      '$times',
+                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                Text(
+                  '$subname',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '$price',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text(
+                      '$price',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
             ),
-            blurRadius: 10.0,
-            spreadRadius: 2.0,
           ),
         ]),
-        child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: Image.network(
-              '$image',
-              fit: BoxFit.cover,
-            )),
-      ),
-      SizedBox(
-        width: 15,
-      ),
-      SizedBox(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Text(
-                  '$name',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Text(
-                  '$times',
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
-                ),
-              ],
-            ),
-            Text(
-              '$subname',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Row(
-              children: [
-                Text(
-                  '$price',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Text(
-                  '$price',
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-          ],
+        SizedBox(
+          height: 20,
         ),
-      ),
-    ]);
+      ],
+    );
+  }
+}
+
+class Carts1 extends StatelessWidget {
+  Carts1(
+      {super.key,
+      this.name,
+      this.price,
+      this.subname,
+      this.times,
+      this.image,
+      required this.onTap});
+  String? name;
+  String? price;
+  String? subname;
+  String? times;
+  String? image;
+  Function onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(children: [
+          Container(
+            height: 90,
+            width: 90,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.shade400,
+                    offset: const Offset(
+                      5.0,
+                      5.0,
+                    ),
+                    blurRadius: 10.0,
+                    spreadRadius: 2.0,
+                  ),
+                ]),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.network(
+                  '$image',
+                  fit: BoxFit.cover,
+                )),
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          SizedBox(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      '$name',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 60,
+                    ),
+                    Text(
+                      '$times',
+                      style: TextStyle(fontSize: 16, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                Text(
+                  '$subname',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '$price',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text(
+                      '$price',
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
+          ),
+        ]),
+        SizedBox(
+          height: 20,
+        ),
+      ],
+    );
   }
 }

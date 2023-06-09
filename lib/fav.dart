@@ -2,9 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class Fav extends StatelessWidget {
+class Fav extends StatefulWidget {
   const Fav({super.key});
 
+  @override
+  State<Fav> createState() => _FavState();
+}
+
+class _FavState extends State<Fav> {
+  List data = [
+    {
+      "image": "https://m.media-amazon.com/images/I/71a95kdnJ3L._UL1500_.jpg",
+      "name": "Nike Jordan",
+      "price": "\$453.00"
+    },
+    {
+      "image":
+          "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/953f8c77-48ab-4583-b040-c04a3a93ab32/air-jordan-1-ko-chicago-release-date.jpg",
+      "name": "Nike Jordan",
+      "price": "\$553.00"
+    },
+    {
+      "image":
+          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0f01feae-e8f2-4c4c-bf4a-d243a0d6e65a/air-jordan-1-retro-high-og-shoes-Pz6fZ9.png",
+      "name": "Nike Jordan",
+      "price": "\$753.00"
+    },
+    {
+      "image":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlm4ednix-OjMPwzOz0Mov8nGuefDqjNNQ5BttUFaS9Rr9-x4vQ9BQg-FfQhLwfFJQqMg&usqp=CAU",
+      "name": "Nike Jordan",
+      "price": "\$653.00"
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,7 +120,7 @@ class Fav extends StatelessWidget {
                 mainAxisSpacing: 5.0,
                 shrinkWrap: true,
                 children: List.generate(
-                  4,
+                  data.length,
                   (index) {
                     return Padding(
                       padding: const EdgeInsets.all(10.0),
@@ -113,28 +143,38 @@ class Fav extends StatelessWidget {
                               ]),
                           child: Column(children: [
                             Stack(children: [
-                              Container(
-                                height: 105,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(20),
-                                      topRight: Radius.circular(20)),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(20),
-                                      topRight: Radius.circular(20)),
-                                  child: Image.network(
-                                    'https://m.media-amazon.com/images/I/71a95kdnJ3L._UL1500_.jpg',
-                                    fit: BoxFit.cover,
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(context, '/menshoes',
+                                      arguments: {
+                                        "image": data[index]["image"],
+                                        "name": data[index]["name"],
+                                        "price": data[index]["price"],
+                                      });
+                                },
+                                child: Container(
+                                  height: 105,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(20),
+                                        topRight: Radius.circular(20)),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(20),
+                                        topRight: Radius.circular(20)),
+                                    child: Image.network(
+                                      data[index]["image"],
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
                               Positioned(
                                 top: 10,
-                                left: 10,
+                                right: 10,
                                 child: Container(
                                   height: 30,
                                   width: 30,
@@ -179,7 +219,7 @@ class Fav extends StatelessWidget {
                                     height: 10,
                                   ),
                                   Text(
-                                    'Nike Jordan',
+                                    data[index]["name"],
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold),
@@ -190,7 +230,7 @@ class Fav extends StatelessWidget {
                                   Row(
                                     children: [
                                       Text(
-                                        '\$453.00',
+                                        data[index]["price"],
                                         style: TextStyle(
                                             fontSize: 16,
                                             color: Colors.black,
@@ -232,5 +272,31 @@ class Fav extends StatelessWidget {
                 ),
               ),
             ])));
+  }
+}
+
+class Grids extends StatefulWidget {
+  Grids({
+    required this.price,
+    required this.image,
+    required this.name,
+    required this.onTap,
+  });
+  String? image;
+  String? name;
+
+  String? price;
+  Function()? onTap;
+
+  @override
+  State<Grids> createState() => _GridsState();
+}
+
+class _GridsState extends State<Grids> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [],
+    );
   }
 }

@@ -46,6 +46,7 @@ class MyApp extends StatelessWidget {
           '/notifications': (context) => const Notifications(),
           '/settings': (context) => const Settings(),
           '/menshoes': (context) => const Menshoes(),
+          '/search': (context) => const Search(),
         });
   }
 }

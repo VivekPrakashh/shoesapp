@@ -723,78 +723,88 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 120,
-                width: double.infinity,
-                padding: EdgeInsets.only(left: 10),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade400,
-                        offset: const Offset(
-                          5.0,
-                          5.0,
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/menshoes', arguments: {
+                    "image":
+                        "https://cdn.shopify.com/s/files/1/0015/1263/6483/products/jordan-1-low-black-university-blue-white-w-dropout-5.jpg?v=1676597961",
+                    "name": "Nike Jordan",
+                    "price": "\$453",
+                  });
+                },
+                child: Container(
+                  height: 120,
+                  width: double.infinity,
+                  padding: EdgeInsets.only(left: 10),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.shade400,
+                          offset: const Offset(
+                            5.0,
+                            5.0,
+                          ),
+                          blurRadius: 10.0,
+                          spreadRadius: 2.0,
                         ),
-                        blurRadius: 10.0,
-                        spreadRadius: 2.0,
+                      ]),
+                  child: Row(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            'Best Seller',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          Text(
+                            'Nike Jordan',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '\$453.00',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
                       ),
-                    ]),
-                child: Row(
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 10,
+                      Spacer(),
+                      Container(
+                        height: 120,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(20),
+                              topRight: Radius.circular(20)),
                         ),
-                        Text(
-                          'Best Seller',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.blue,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(20),
+                              topRight: Radius.circular(20)),
+                          child: Image.network(
+                            'https://cdn.shopify.com/s/files/1/0015/1263/6483/products/jordan-1-low-black-university-blue-white-w-dropout-5.jpg?v=1676597961',
+                            fit: BoxFit.cover,
                           ),
                         ),
-                        Text(
-                          'Nike Jordan',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          '\$453.00',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Container(
-                      height: 120,
-                      width: 180,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(20),
-                            topRight: Radius.circular(20)),
                       ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            bottomRight: Radius.circular(20),
-                            topRight: Radius.circular(20)),
-                        child: Image.network(
-                          'https://cdn.shopify.com/s/files/1/0015/1263/6483/products/jordan-1-low-black-university-blue-white-w-dropout-5.jpg?v=1676597961',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             ],

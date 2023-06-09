@@ -18,28 +18,33 @@ class Signup extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.centerLeft,
-              child: Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade400,
-                        offset: const Offset(
-                          5.0,
-                          5.0,
+              child: InkWell(
+                 onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.shade400,
+                          offset: const Offset(
+                            5.0,
+                            5.0,
+                          ),
+                          blurRadius: 10.0,
+                          spreadRadius: 2.0,
                         ),
-                        blurRadius: 10.0,
-                        spreadRadius: 2.0,
-                      ),
-                    ]),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Icon(
-                    Icons.chevron_left,
-                    size: 30,
+                      ]),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Icon(
+                      Icons.chevron_left,
+                      size: 30,
+                    ),
                   ),
                 ),
               ),

@@ -17,17 +17,32 @@ class Onboard3 extends StatelessWidget {
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
                     child: Image.network(
-                      'https://images.pexels.com/photos/345415/pexels-photo-345415.jpeg',
+                      'https://e1.pxfuel.com/desktop-wallpaper/317/516/desktop-wallpaper-jordan-kicks-by-onethird-art-red-shoes-android.jpg',
+                      // 'https://images.pexels.com/photos/345415/pexels-photo-345415.jpeg',
                       fit: BoxFit.cover,
                     )),
                 Positioned(
-                    bottom: 40,
-                    left: 40,
+                    bottom: 30,
+                    right: 20,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          'Summer Shoes\nNike 2022',
+                          'Summer',
+                          style: TextStyle(
+                              shadows: [
+                                Shadow(
+                                  blurRadius: 10.0,
+                                  color: Colors.grey,
+                                  offset: Offset(5.0, 5.0),
+                                ),
+                              ],
+                              fontSize: 35,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w900),
+                        ),
+                        Text(
+                          'Shoes Nike',
                           style: TextStyle(
                               shadows: [
                                 Shadow(
@@ -41,24 +56,7 @@ class Onboard3 extends StatelessWidget {
                               fontWeight: FontWeight.w900),
                         ),
                         SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          'There Are Many Beautiful And\nAttractive Plants To Your Room',
-                          style: TextStyle(
-                              shadows: [
-                                Shadow(
-                                  blurRadius: 10.0,
-                                  color: Colors.grey,
-                                  offset: Offset(5.0, 5.0),
-                                ),
-                              ],
-                              fontSize: 20,
-                              color: Colors.grey.shade200,
-                              fontWeight: FontWeight.w900),
-                        ),
-                        SizedBox(
-                          height: 40,
+                          height: 20,
                         ),
                         InkWell(
                           onTap: () {
@@ -76,13 +74,30 @@ class Onboard3 extends StatelessWidget {
                               child: Text(
                                 'Next',
                                 style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          'There Are Many Beautiful And\nAttractive Plants To Your Room',
+                          style: TextStyle(
+                              shadows: [
+                                Shadow(
+                                  blurRadius: 10.0,
+                                  color: Colors.grey,
+                                  offset: Offset(5.0, 5.0),
+                                ),
+                              ],
+                              fontSize: 20,
+                              color: Colors.grey.shade200,
+                              fontWeight: FontWeight.w900),
+                        ),
                       ],
                     ))
               ],

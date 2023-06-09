@@ -76,9 +76,9 @@ class Onboard2 extends StatelessWidget {
                               child: Text(
                                 'Next',
                                 style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                ),
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
